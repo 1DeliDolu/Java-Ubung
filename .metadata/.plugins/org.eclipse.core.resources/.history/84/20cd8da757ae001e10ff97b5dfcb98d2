@@ -1,0 +1,14 @@
+package Aufgabeteil2C;
+
+public class Aufgabe01_01Starter {
+	// Verwendung der Konstruktoren für Tier und Hund
+	
+	    public static void main(String[] args) {
+	        // Erstellen eines Hund-Objekts und Initialisierung durch den Konstruktor
+	        Hund meinHund = new Hund("Säugetier", "Labrador");
+
+	        // Zugriff auf die Werte des Objekts
+	        System.out.println("Art: " + meinHund.getArt());
+	        System.out.println("Rasse: " + meinHund.getRasse());
+	    }
+	    }

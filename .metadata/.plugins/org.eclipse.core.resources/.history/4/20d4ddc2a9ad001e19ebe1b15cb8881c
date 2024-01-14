@@ -1,0 +1,10 @@
+package oop_brief;
+
+public class Standort {
+
+	Standort standort;
+	String mietzeitraum;
+	Raum raum;
+	String ressourcen;
+	
+}

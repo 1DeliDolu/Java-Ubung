@@ -1,0 +1,24 @@
+package jFrameUndJPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Graphical User Interface (GUI)
+		// Swing : Sun Microsystems trafindan piyasaya sürülen resmi Java GUI araci dir:
+		JFrame frame=new JFrame();
+		frame.setSize(400, 400);
+		
+		JPanel pnl= new JPanel();
+		frame.add(pnl);
+		JButton btn= new JButton("Button");
+		pnl.add(btn);
+		
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+
+}

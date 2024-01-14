@@ -1,0 +1,16 @@
+package zusatzAufgabe;
+
+public class Starter {
+
+	public static void main(String[] args) {
+	       
+        Uhrzeit uhrzeit = new Uhrzeit(23, 59, 59);
+        System.out.println("Uhrzeit: " + uhrzeit.toString());
+
+        uhrzeit.addSeconds(120);
+        System.out.println("Uhrzeit nach Hinzufügen von 120 Sekunden: " + uhrzeit.toString());
+
+        System.out.print("Uhrzeit im amerikanischen Format: ");
+        uhrzeit.printTime();
+    }
+}

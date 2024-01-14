@@ -1,0 +1,14 @@
+package jFrameUndJPanel;
+import javax.swing.JFrame;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Graphical User Interface (GUI)
+		// Swing : Sun Microsystems trafindan piyasaya sürülen resmi Java GUI araci dir:
+		JFrame frame=new JFrame();
+		frame.setSize(400, 400);
+		frame.setVisible(true);
+	}
+
+}

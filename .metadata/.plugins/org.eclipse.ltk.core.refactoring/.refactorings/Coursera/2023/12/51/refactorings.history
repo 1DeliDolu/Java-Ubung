@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ersteAufgabe.ShapePerimeter.java&apos; to &apos;PerimeterCalculator.java&apos;&#x0D;&#x0A;- Original project: &apos;Coursera&apos;&#x0D;&#x0A;- Original element: &apos;ersteAufgabe.ShapePerimeter.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ersteAufgabe.PerimeterCalculator.java&apos;" description="Rename compilation unit &apos;ShapePerimeter.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ersteAufgabe{ShapePerimeter.java" name="PerimeterCalculator.java" references="false" stamp="1703238387789" version="1.0"/>
+</session>

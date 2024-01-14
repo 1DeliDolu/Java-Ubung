@@ -1,0 +1,18 @@
+package jCheckBox;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//JCheckBox
+		////obj.setBounds(x,y,width,height)
+		
+		JFrame frame=new JFrame("Beispiel für JCheckBox");
+		frame.setSize(400,400);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
+
+}

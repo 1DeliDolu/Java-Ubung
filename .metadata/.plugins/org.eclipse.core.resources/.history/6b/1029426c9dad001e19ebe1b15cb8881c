@@ -1,0 +1,17 @@
+
+public class Starter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/**
+		 * @param strassenname
+		 * @param hausnummer
+		 * @param plz
+		 * @param stadt
+		 */
+		Adresse a1= new Adresse("Berlinerstrasse";12;"01123";"Dresden");
+		a1.hausnummer=12;
+	}
+
+}

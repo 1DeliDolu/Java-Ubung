@@ -1,0 +1,85 @@
+
+public class Starter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/**
+		 * @param strassenname
+		 * @param hausnummer
+		 * @param plz
+		 * @param stadt
+		 */
+		Adresse a1= new Adresse("Berlinerstrasse",12,"01123","Dresden");
+		
+		
+		Standort s1 =new Standort(a1 ,"Berlin");
+		
+		/**
+		 * @param raumnummer
+		 * @param art
+		 */
+		Raum r1=new Raum(123,"Miete");
+		
+		/**
+		 * @param standort
+		 * @param mietzeitraum
+		 * @param raum
+		 * @param ressourcen
+		 */
+		Buchung b1=new Buchung(s1,"15.07.24-23.08.23",r1, "beamer");
+		/**
+		 * @param name
+		 * @param telefonnummer
+		 * @param email
+		 * @param kunden
+		 */
+		Sachbearbeiter sa1=new Sachbearbeiter("Hans Mustermann","2345-3210","hansmustermann@dmax.de",sa1.getKunden());
+		 int[] kunden= new int[10]; 
+		 //kunden[0]=k1.kundennummer;	
+		
+		
+		/**
+		 * @param name
+		 * @param kundennummer
+		 * @param adresseDesKunden
+		 * @param telefonnummer
+		 * @param email
+		 * @param sachbearbeiter
+		 */
+		Kunde k1= new Kunde("Helena Fischer",10,a1.toString(),"1760001","helenafischer@dmax.vom",sa1.toString());
+		
+		
+		
+		/**
+		 * @param buchungsnummer
+		 * @param datum
+		 * @param kunde
+		 * @param buchung
+		 */
+		Buchungsbestätigung bu1=new Buchungsbestätigung(123,"03.07.23",k1.toString(),b1.toString());
+		
+		/**
+		 * @param name
+		 * @param kundennummer
+		 * @param adresseDesKunden
+		 * @param telefonnummer
+		 * @param email
+		 * @param sachbearbeiter
+		 */
+		Kunde k1= new Kunde("Helena Fischer",10,a1.toString(),1760001,"helenafischer@dmax.vom",sa1.toString());
+		
+		/**
+		 * @param name
+		 * @param telefonnummer
+		 * @param email
+		 * @param kunden
+		 */
+		Sachbearbeiter sa1=new Sachbearbeiter("Hans Mustermann","2345-3210","hansmustermann@dmax.de",sa1.kunden);
+		 int[] kunden= new int[10]; 
+		 kunden[0]=k1.kundennummer;		
+		 
+		 
+	}
+
+}

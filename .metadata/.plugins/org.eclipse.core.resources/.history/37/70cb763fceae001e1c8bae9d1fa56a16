@@ -1,0 +1,50 @@
+package AufgabeTeil2A;
+
+public class Aufgabe01 {
+	public int zahl;
+	char geschlecht;
+	private String name;
+	
+	
+	@Override
+	public String toString() {
+		return "Aufgabe01 [zahl=" + zahl + ", geschlecht=" + geschlecht + ", name=" + name + "]";
+	}
+	/**
+	 * @return the zahl
+	 */
+	public int getZahl() {
+		return zahl;
+	}
+	/**
+	 * @param zahl the zahl to set
+	 */
+	public void setZahl(int zahl) {
+		this.zahl = zahl;
+	}
+	/**
+	 * @return the geschlecht
+	 */
+	public char getGeschlecht() {
+		return geschlecht;
+	}
+	/**
+	 * @param geschlecht the geschlecht to set
+	 */
+	public void setGeschlecht(char geschlecht) {
+		this.geschlecht = geschlecht;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}

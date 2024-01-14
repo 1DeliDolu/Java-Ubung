@@ -1,0 +1,21 @@
+package jPasswordField;
+
+import javax.swing.JFrame;
+import javax.swing.JPasswordField;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frame=new JFrame("Beispiel für JPasswordField");
+		frame.setSize(400,400);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+		JPasswordField pass=new JPasswordField();
+		pass.setBounds(0,0,100,30);
+		
+		frame.add(pass);
+	}
+
+}

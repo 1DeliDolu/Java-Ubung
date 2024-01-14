@@ -1,0 +1,46 @@
+package AufgabeTeil3;
+
+public class StarterAufgabe01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//int neueNummer, String name, Konto werber 	 argümant für dritte constructor
+		//int neueNummer,String name,int begrüßungsGeld  argümant für erste constructor
+		//int neueNummer,String name 					 argümant für zweite constructor
+		//int neueNummer, Konto bankKonto 				 arhümant für handy
+		
+		
+		Konto konto1=new Konto(1,"Mustafa Özdemir",1000);
+		Konto konto2=new Konto(2,"Bettina Müller");
+		Konto konto3=new Konto(1,"Mustafa Özdemir",50);
+		Konto konto4=new Konto(4,"Max Mustermann",50);
+		Konto konto5=new Konto(1,"Mustafa Özdemir",1000);
+		
+		konto1.kontoAuszug();
+		
+		konto1.ueberweisen(konto2, 50);
+		
+		konto2.kontoAuszug();
+		
+		konto2.ueberweisen(konto3, 50);
+		
+		konto1.abheben(50);
+		konto1.kontoAuszug();
+		//konto3.kontoAuszug();
+		//konto2.kontoAuszug();
+		
+		Handy han1= new Handy(1234567,konto1);
+		Handy han2= new Handy(2213457,konto2);
+		Handy han3= new Handy(3123456,konto3);
+		han1.sendeSMS(han2, "\nHello");
+		han2.sendeSMS(han3, "\nGuten Tag");
+		han3.sendeSMS(han1, "\nGuten Morgen");
+		System.out.println(han2.leseSMS());
+		System.out.println(han1.toString());
+		//System.out.println(han1);
+		//System.out.println(han2);
+		//konto1.kontoAuszug();
+		
+	}
+
+}

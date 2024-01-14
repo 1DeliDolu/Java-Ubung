@@ -1,0 +1,128 @@
+package datenBank;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatenBank {
+    String url = "jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8";
+    private String user = "root";
+    private String pass = "";
+    private static Connection con = null;
+    private static Statement statement = null;
+    private String vorName;
+    private String name;
+    private String email;
+    private PreparedStatement prepared;
+    public DatenBank() {
+        try {
+            // Load the JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish connection
+            con = DriverManager.getConnection(this.url, this.user, this.pass);
+            System.out.println("Verbindung erfolgreich hergestellt");
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void preparedArbeiterZugriff() {
+    	try {
+			statement=con.createStatement();
+			 String such="Select*From arbeitern were ad like 'M%'";
+			 ResultSet rs=statement.executeQuery(such);
+			 while(rs.next()) {
+				 System.out.println("Ad: "+rs.getString("vorname"));
+			 }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+    public void arbeiterDel(int fromId, int toId) {
+    	
+    	try {
+			statement =con.createStatement();
+			String such="Delete from arbeitern where id>'"+fromId+"' AND id<='"+toId+"'";
+            statement.executeUpdate(such);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+    public void arbeiterAdd(int id, String vorname, String name, String email) {
+        try {
+            this.vorName = vorname;
+            this.name = name;
+            this.email = email;
+
+            // Use PreparedStatement to prevent SQL injection
+            String arbeiterAdd = "INSERT INTO arbeitern(id, vorname, name, email) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement preparedStatement = con.prepareStatement(arbeiterAdd)) {
+                preparedStatement.setInt(1, id); // Corrected this line
+                preparedStatement.setString(2, vorname);
+                preparedStatement.setString(3, name);
+                preparedStatement.setString(4, email);
+
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void arbeterUpdate(int id,String vorname,String name,String email) {
+        try {
+            String update = "UPDATE arbeitern SET vorname = ?, name = ?, email = ? WHERE id = ?";         
+            try (PreparedStatement preparedStatement = con.prepareStatement(update)) {
+                preparedStatement.setString(1, vorname);
+                preparedStatement.setString(2, name);
+                preparedStatement.setString(3, email);
+                preparedStatement.setInt(4, id);
+
+                preparedStatement.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void arbeiterZugriff(int id) {
+        String such = "SELECT * FROM arbeitern where id>= ?";
+        try {
+            try (PreparedStatement preparedStatement = con.prepareStatement(such)) {
+                preparedStatement.setInt(1, id);
+                try (ResultSet rs = preparedStatement.executeQuery()) {
+                    while (rs.next()) {
+                        id = rs.getInt("id");
+                        String vorName = rs.getString("vorname");
+                        String name = rs.getString("name");
+                        String email = rs.getString("email");
+                        System.out.println("id: \t" + id + " Vorname: " + vorName + " Nachname: " + name + " email: " + email);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        DatenBank db = new DatenBank();
+        db.arbeiterAdd(15,"Lisandra", "Osorio", "lisaosorio@gmail.com");
+        db.arbeiterZugriff(1);
+        
+        db.arbeiterDel(14,15);
+db.preparedArbeiterZugriff();
+        db.arbeiterZugriff(1);
+    }
+}

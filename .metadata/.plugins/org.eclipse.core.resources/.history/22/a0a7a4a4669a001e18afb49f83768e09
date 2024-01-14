@@ -1,0 +1,21 @@
+package aufgabeForSchleifen;
+
+public class AufgabeForSchleifen {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i, j, k,l,m;
+
+		k=0;
+		for (i=1; i<10; i=i+1) {
+		k=k+i;
+		}
+		System.out.println("Wert von k: " + k);
+		l=0
+		for (m=2; m<10; m=m+2) {
+			l=l+m;
+		}
+		System.out.println("Wert von k: " + l);
+	}
+
+}

@@ -1,0 +1,88 @@
+package AufgabeTeil2D;
+
+
+	public class Aufgabe02 {
+	    private static int mindScheine = 4; // Anzahl der Scheine für die Prüfungszulassung (angenommen)
+
+	    private String name;
+	    private int matrikelNr;
+	    private int scheinAnzahl;
+	    private static int laufendeNummer=0;
+	    
+
+	    // Konstruktor für die Initialisierung eines Studenten mit Namen und fortlaufender Matrikelnummer
+	    public Aufgabe02(String name) {
+	        this.name = name;
+	        this.matrikelNr = generiereMatrikelNr();
+	        this.scheinAnzahl = 0;
+	    }
+
+	    // Methode zur Generierung einer fortlaufenden Matrikelnummer (einfaches Beispiel)
+	    private int generiereMatrikelNr() {
+	    	laufendeNummer++;
+	        return laufendeNummer; // Annahme: Matrikelnummer im Bereich von 1000 bis 9999
+	    }
+
+	    // Methode, um die Matrikelnummer des Studenten zu erhalten
+	    public int getMatrikelNr() {
+	        return matrikelNr;
+	    }
+
+	    // Methode, um die Anzahl der bisher erlangten Scheine zu erhalten
+	    public int getScheinAnzahl() {
+	        return scheinAnzahl;
+	    }
+
+	    // Methode, um dem Studenten Anzahl viele neue Scheine hinzuzufügen
+	    public void addScheine(int anzahl) {
+	        if (anzahl > 0) {
+	            scheinAnzahl += anzahl;
+	            System.out.println(name + " hat " + anzahl + " neue Scheine erhalten.");
+	        } else {
+	            System.out.println("Ungültige Anzahl von Scheinen.");
+	        }
+	    }
+
+	    // Methode, um die Anzahl der Scheine für die Prüfungszulassung zu setzen
+	    public static void setMindScheine(int anzahl) {
+	        if (anzahl > 0) {
+	            mindScheine = anzahl;
+	            System.out.println("Die Anzahl der notwendigen Scheine für die Prüfungszulassung wurde auf " + anzahl + " gesetzt.");
+	        } else {
+	            System.out.println("Ungültige Anzahl von notwendigen Scheinen.");
+	        }
+	    }
+
+	    // Methode zur Überprüfung der Zulassung zur Prüfung
+	    public boolean testeZulassung() {
+	        return (scheinAnzahl >= mindScheine)? true:false;
+	    }
+
+	    // Beispiel für eine toString-Methode für eine übersichtliche Ausgabe
+	    @Override
+	    public String toString() {
+	        return "Student{" +
+	                "name='" + name + '\'' +
+	                ", matrikelNr=" + matrikelNr +
+	                ", scheinAnzahl=" + scheinAnzahl +
+	                "testeZulassung="+ testeZulassung()+'}';
+	    }
+
+	    // Beispiel für eine main-Methode zum Testen
+	    public static void main(String[] args) {
+	        // Erstellen von Studenten und Durchführung von Operationen
+	        Aufgabe02 student1 = new Aufgabe02("Max Mustermann");
+	        Aufgabe02 student2 = new Aufgabe02("Anna Beispiel");
+
+	        
+
+	        student1.addScheine(2);
+	       
+	        student2.addScheine(4);
+
+	        Aufgabe02.setMindScheine(5);
+
+	        System.out.println(student1); // false
+	        System.out.println(student2); // false
+	    }
+	}

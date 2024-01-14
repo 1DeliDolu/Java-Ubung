@@ -1,0 +1,27 @@
+
+public class Starter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/**
+		 * @param strassenname
+		 * @param hausnummer
+		 * @param plz
+		 * @param stadt
+		 */
+		Adresse a1= new Adresse("Berlinerstrasse",12,"01123","Dresden");
+		
+		/**
+		 * @param standort
+		 * @param mietzeitraum
+		 * @param raum
+		 * @param ressourcen
+		 */
+		Standort s1 =new Standort(a1.toString(),"Berlin");
+		
+		Buchung b1=new Buchung(Standort.standort.);
+		
+	}
+
+}

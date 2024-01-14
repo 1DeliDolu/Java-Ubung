@@ -1,0 +1,55 @@
+package AufgabeTeil2B;
+
+
+
+
+public class Aufgabe02 {
+  
+    private int zaehlerInstanz;
+    private static int zaehlerKlasse;
+    private static int laufNum=1;
+
+   
+    public Aufgabe02() {
+        this.zaehlerInstanz = erhoeheZaehlerInstanz();
+        laufNum++;
+        
+    }
+
+    
+    public int getZaehlerInstanz() {
+        return zaehlerInstanz;
+    }
+
+ 
+    public static int getZaehlerKlasse() {
+        return zaehlerKlasse;
+    }
+
+    
+    public int erhoeheZaehlerInstanz() {
+    	zaehlerInstanz++;
+    	return this.zaehlerInstanz;
+    }
+
+   
+    public static int erhoeheZaehlerKlasse() {
+       return zaehlerKlasse= erhoeheZaehlerInstanz();
+    }
+
+    
+    public static void main(String[] args) {
+        
+        Aufgabe02 zaehlerEins = new Aufgabe02();
+        Aufgabe02 zaehlerZwei = new Aufgabe02();
+        Aufgabe02 objekt3 = new Aufgabe02();
+        Aufgabe02 objekt4 = new Aufgabe02();
+
+        
+       
+        System.out.println("objekt1: "+zaehlerEins.getZaehlerInstanz());
+        System.out.println("objekt2: "+zaehlerZwei.getZaehlerInstanz());
+        System.out.println("objekt3: "+objekt3.getZaehlerInstanz());
+        System.out.println("Zahl der Klasse: "+Aufgabe02.getZaehlerKlasse());
+    }
+}

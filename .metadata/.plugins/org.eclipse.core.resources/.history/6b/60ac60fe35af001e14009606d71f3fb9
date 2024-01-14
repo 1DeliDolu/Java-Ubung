@@ -1,0 +1,47 @@
+package AufgabeTeil3;
+
+	public class Handy {
+		 
+		  private int nummer;
+		  private String besitzer;
+		  private Konto konto;
+		  private String ausLetzteSMS;
+		  private String einLetzteSMS;
+		  
+
+		
+		  public Handy(int neueNummer, Konto bankKonto) {
+		    this.nummer = neueNummer;
+		    this.konto = bankKonto;
+		    this.besitzer = konto.getInhaber(); 
+		    this.ausLetzteSMS = ""; 
+		    this.einLetzteSMS="";
+		  }
+
+		  
+		  public void sendeSMS(Handy empfänger, String text) {
+		    empfänger.einLetzteSMS = text; 
+		    konto.abheben(1); 
+		  }
+
+		  
+		  public String leseSMS() {
+		    return einLetzteSMS;
+		  }
+
+		
+		  public void druckeSMS() {
+		    System.out.println("Letzte SMS: " + einLetzteSMS);
+		  }
+
+		@Override
+		public String toString() {
+			return "Handy [nummer=" + nummer + ", besitzer=" + besitzer + ",ausLetzteSMS "  +ausLetzteSMS+ ", einLetzteSMS="
+					+ einLetzteSMS + "]";
+		}
+		
+		  
+		  
+		  
+		  
+		}

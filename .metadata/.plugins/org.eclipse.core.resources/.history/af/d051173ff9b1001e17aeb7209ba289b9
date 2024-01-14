@@ -1,0 +1,79 @@
+package JList;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultListModel;
+import javax.swing.DefaultListSelectionModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//JList
+		//obj.setSize(x,y,width,height)
+		JFrame frame=new JFrame("Beispiel für Button");
+		DefaultListModel<String> dl=new DefaultListModel<>();
+		
+		dl.addElement("C++");
+		dl.addElement("C");
+		dl.addElement("Java");
+		dl.addElement("PHP");
+		dl.addElement("Javacript");
+		
+		JList<String> list=new JList<>(dl);
+		list.setBounds(100, 100,75,75);
+		list.setSelectionMode(DefaultListSelectionModel.SINGLE_SELECTION);
+		
+		DefaultListModel<String> dl1=new DefaultListModel<>();
+		dl.addElement("Swing");
+		dl.addElement("Laravel");
+		dl.addElement("VueJs");
+		dl.addElement("Bootstrap");
+		dl.addElement("w3School");
+		
+		JList<String> list1=new JList<>(dl1);
+		list.setBounds(100, 100,75,75);
+		
+		JButton btn= new JButton("Send");
+		btn.setBounds(200, 150, 80, 85);
+		
+		
+		btn.addActionListener(new ActionListener() {
+			String txt;
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(list.getSelectedIndex()!=-1) {
+					txt="Die ausgewählte Computersprache: "+ list.getSelectedValue();
+				}
+				if(list1.getSelectedIndex()!=-1) {
+					
+					txt+=",das ausgewählte Framework: ";
+					for(String item:list1.getSelectedValuesList()) {
+						txt+=item+" "; 
+					}
+					
+				}
+				System.out.println(txt);
+			}
+
+			
+		});
+		
+		
+		
+		
+		frame.add(list1);
+		frame.add(list1);
+		frame.add(btn);
+		frame.setSize(500,500);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
+
+}

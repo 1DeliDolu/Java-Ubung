@@ -1,0 +1,12 @@
+package javaClassesAndObjects;
+
+public class MultipleObjects {
+	  int x = 5;
+
+	  public static void main(String[] args) {
+	    Main myObj1 = new Main();
+	    Main myObj2 = new Main();
+	    System.out.println(myObj1.x);
+	    System.out.println(myObj2.x);
+	  }
+	}

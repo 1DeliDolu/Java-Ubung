@@ -1,0 +1,13 @@
+package Aufgabeteil2C;
+
+public class StarterAufgabe01 {
+	public class Main{
+	    public static void main(String[] args) {
+	        // Erstellen eines Auto-Objekts und Initialisierung durch den Konstruktor
+	    	Aufgabe01 meinAuto = new Aufgabe01("Ferrari", 2022);
+
+	        // Zugriff auf die Werte des Objekts
+	        System.out.println("Modell: " + meinAuto.getModell());
+	        System.out.println("Baujahr: " + meinAuto.getBaujahr());
+	    }
+	}

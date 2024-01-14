@@ -1,0 +1,43 @@
+public class SteuernUSA {
+    public static void main(String[] args) {
+        // Gegebene Steuersätze und Brutto-Gehalt
+        double bruttoGehalt = 123456.78;
+        boolean istVerheiratet = true;
+
+        // Lokale Variable für das zu versteuernde Einkommen
+        double zuVersteuerndesEinkommen;
+
+        // Bestimme das zu versteuernde Einkommen basierend auf dem Brutto-Gehalt und dem Verheiratet-Status
+        if (istVerheiratet) {
+            zuVersteuerndesEinkommen = bruttoGehalt - 18550;
+        } else {
+            zuVersteuerndesEinkommen = bruttoGehalt - 9275;
+        }
+
+        // Lokale Variable für das Netto-Gehalt
+        double nettoGehalt;
+
+        // Berechne die Einkommensteuer basierend auf dem zu versteuernden Einkommen
+        if (zuVersteuerndesEinkommen <= 9275) {
+            nettoGehalt = bruttoGehalt * (1 - 0.10);
+        } else if (zuVersteuerndesEinkommen <= 37650) {
+            nettoGehalt = bruttoGehalt * (1 - 0.15);
+        } else if (zuVersteuerndesEinkommen <= 91150) {
+            nettoGehalt = bruttoGehalt * (1 - 0.25);
+        } else if (zuVersteuerndesEinkommen <= 190150) {
+            nettoGehalt = bruttoGehalt * (1 - 0.28);
+        } else if (zuVersteuerndesEinkommen <= 413350) {
+            nettoGehalt = bruttoGehalt * (1 - 0.33);
+        } else if (zuVersteuerndesEinkommen <= 415050) {
+            nettoGehalt = bruttoGehalt * (1 - 0.35);
+        } else if (zuVersteuerndesEinkommen <= 466950) {
+            nettoGehalt = bruttoGehalt * (1 - 0.39);
+        } else {
+            // Falls das zu versteuernde Einkommen höher ist als die höchste Stufe
+            nettoGehalt = bruttoGehalt * (1 - 0.39);
+        }
+
+        // Ausgabe des Netto-Gehalts
+        System.out.println("Netto-Gehalt: $" + nettoGehalt);
+    }
+}

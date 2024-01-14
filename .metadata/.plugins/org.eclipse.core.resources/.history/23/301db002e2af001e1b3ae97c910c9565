@@ -1,0 +1,50 @@
+package zusatzAufgabe;
+
+public class Uhrzeit {
+    private int stunden;
+    private int minuten;
+    private int sekunden;
+
+   
+    public Uhrzeit(int stunden, int minuten, int sekunden) {
+        this.stunden = stunden;
+        this.minuten = minuten;
+        this.sekunden = sekunden;
+    }
+
+   
+    public void addSeconds(int sec) {
+        int gesamtSekunden = stunden * 3600 + minuten * 60 + sekunden + sec;
+        stunden = (gesamtSekunden / 3600) % 12;
+        minuten = (gesamtSekunden % 3600) / 60;
+        sekunden = gesamtSekunden % 60;
+    }
+
+   
+    public String toString() {
+        return String.format("%02d:%02d:%02d", stunden, minuten, sekunden);
+    }
+
+     
+    public void printTime() {
+        String am_pm = (stunden < 12) ? "a.m." : "p.m.";
+        if (stunden == 0) {
+            stunden = 12;
+        } else if (stunden > 12) {
+            stunden -= 12;
+        }
+        System.out.printf("%d:%02d %s\n", stunden, minuten, am_pm);
+    }
+
+    public static void main(String[] args) {
+       
+        Uhrzeit uhrzeit = new Uhrzeit(23, 59, 59);
+        System.out.println("Uhrzeit: " + uhrzeit.toString());
+
+        uhrzeit.addSeconds(120);
+        System.out.println("Uhrzeit nach Hinzufügen von 120 Sekunden: " + uhrzeit.toString());
+
+        System.out.print("Uhrzeit im amerikanischen Format: ");
+        uhrzeit.printTime();
+    }
+}

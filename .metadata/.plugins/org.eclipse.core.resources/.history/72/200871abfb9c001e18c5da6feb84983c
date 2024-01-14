@@ -1,0 +1,32 @@
+package JavaArraysLoop;
+
+import java.util.Scanner;
+
+public class LoopThroughAnArray {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+				boolean aktion=true;
+				System.out.print("Bitte geben Sie Array Length ein:");
+				int arrayLength=scanner.nextInt();
+		do {
+		String[] name= new String[arrayLength];
+		int [] age= new int[arrayLength];
+		for(int i=0; i<arrayLength;i++) {
+			System.out.println("Bitte geben Sie den Namen "+i+" ein:");
+			name[i]=scanner.nextLine();
+			System.out.println("Bitte geben Sie die Alte "+i+" ein:");
+			age[i]=scanner.nextInt();
+		}
+			
+		} while(aktion);
+		
+		// TODO Auto-generated method stub
+		String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+	    for (int i = 0; i < cars.length; i++) {
+	      System.out.println(cars[i]);
+	}
+
+}
+}
+

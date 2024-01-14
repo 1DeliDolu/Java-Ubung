@@ -1,0 +1,62 @@
+package AufgabeTeil3;
+
+public class Konto {
+private String inhaber;
+private double kontoStand;
+
+
+public Konto(int neueNummer, String name) {
+	this.inhaber = name;
+    this.kontoStand = 0.0;
+}
+
+public Konto(int neueNummer,String name,int Begrüßungsgeld) {
+	 this(neueNummer, name); 
+     einzahlen(begrüßungsGeld);
+	
+}
+
+public Konto(int neueNummer, String name, Aufgabe01 werber) {
+    this(neueNummer, name, 50);  
+    werber.ueberweisen(this, 50); 
+}
+
+public void einzahlen(double betrag) {
+    kontoStand += betrag;
+}
+
+
+public void abheben(double betrag) {
+    if (betrag <= kontoStand) {
+        kontoStand -= betrag;
+    } else {
+        System.out.println("Nicht genügend Guthaben auf dem Aufgabe01.");
+    }
+}
+
+public void ueberweisen(Aufgabe01 zielKonto, double betrag) {
+    if (betrag <= kontoStand) {
+        abheben(betrag);
+        zielKonto.einzahlen(betrag);
+    } else {
+        System.out.println("Nicht genügend Guthaben auf dem Aufgabe01 für die Überweisung.");
+    }
+}
+public String getInhaber() {
+	return inhaber;
+}
+
+public void setInhaber(String inhaber) {
+	this.inhaber = inhaber;
+}
+
+public double getKontoStand() {
+	return kontoStand;
+}
+
+public void setKontoStand(double kontoStand) {
+	this.kontoStand = kontoStand;
+}
+
+
+}

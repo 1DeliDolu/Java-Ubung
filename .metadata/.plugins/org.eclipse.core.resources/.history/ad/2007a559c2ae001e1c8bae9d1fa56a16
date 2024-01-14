@@ -1,0 +1,67 @@
+package AufgabeTeil2D;
+
+public class Aufgabe01 {
+
+	    private String bezeichnung;
+	    private double einkaufspreis;
+	    private double verkaufspreis;
+	    private int naehrwert;
+
+	    // Konstruktor für die Initialisierung der Obst-Daten
+	    public Aufgabe01(String bezeichnung, double einkaufspreis, int naehrwert) {
+	        this.bezeichnung = bezeichnung;
+	        this.einkaufspreis = einkaufspreis;
+	        this.verkaufspreis = berechneVerkaufspreis(einkaufspreis);
+	        this.naehrwert = naehrwert;
+	    }
+
+	    // Methode zur Berechnung des Verkaufspreises mit 100% Gewinn
+	    private double berechneVerkaufspreis(double einkaufspreis) {
+	        return einkaufspreis * 2.0; // Der Verkaufspreis ist das Doppelte des Einkaufspreises (100% Gewinn)
+	    }
+
+	    // Getter-Methoden für die Daten
+	    public String getBezeichnung() {
+	        return bezeichnung;
+	    }
+
+	    public double getEinkaufspreis() {
+	        return einkaufspreis;
+	    }
+
+	    public double getVerkaufspreis() {
+	        return verkaufspreis;
+	    }
+
+	    public int getNaehrwert() {
+	        return naehrwert;
+	    }
+
+	    // Beispiel für eine Methode, um die Ware aufzupeppen
+	    public void aufpeppen() {
+	        System.out.println("Die " + bezeichnung + " wurde aufgepeppt!");
+	    }
+
+	    // Beispiel für eine toString-Methode für eine übersichtliche Ausgabe
+	    @Override
+	    public String toString() {
+	        return "Obst{" +
+	                "bezeichnung='" + bezeichnung + '\'' +
+	                ", einkaufspreis=" + einkaufspreis +
+	                ", verkaufspreis=" + verkaufspreis +
+	                ", naehrwert=" + naehrwert +
+	                '}';
+	    }
+
+	    // Beispiel für eine main-Methode zum Testen
+	    public static void main(String[] args) {
+	    	Aufgabe01 apfel = new Aufgabe01("Apfel", 1.0, 52);
+	    	Aufgabe01 birne = new Aufgabe01("Birne", 1.5, 57);
+
+	        System.out.println(apfel);
+	        System.out.println(birne);
+
+	        apfel.aufpeppen();
+	        birne.aufpeppen();
+	    }
+	}

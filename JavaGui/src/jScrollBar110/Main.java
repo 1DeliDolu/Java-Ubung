@@ -1,0 +1,44 @@
+package jScrollBar110;
+
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollBar;
+
+public class Main {public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	//JOptionePane
+	//obj.setBounds(x,y,width,height)
+	
+	
+	JFrame frame = new JFrame("Beispiel für JScrollBar");
+
+	JLabel lbl= new JLabel();
+	lbl.setBounds(100, 50, 300, 30);
+	
+	
+	JScrollBar s=new JScrollBar(JScrollBar.VERTICAL);
+	s.setMaximum(100);
+	s.setMinimum(0);
+	s.setBounds(100, 100, 50, 100);
+	s.addAdjustmentListener(new AdjustmentListener() {
+
+		@Override
+		public void adjustmentValueChanged(AdjustmentEvent e) {
+			// TODO Auto-generated method stub
+			lbl.setText("ScrollBar Value: " +(s.getValue()+s.getModel().getExtent()));
+		}
+		
+	});
+	frame.add(lbl);
+	frame.add(s);
+
+	frame.setSize(500,500);
+	frame.setLayout(null);
+	frame.setVisible(true);
+}
+
+
+}

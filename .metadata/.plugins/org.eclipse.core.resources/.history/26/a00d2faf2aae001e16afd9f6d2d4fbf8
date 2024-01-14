@@ -1,0 +1,39 @@
+package AufgabenTeil1;
+
+public class JavaInitializers {
+	static void ausgabe(){
+
+		   System.out.println( "Statischer Initialisierer");
+
+		  }
+
+
+
+		  {
+
+		    System.out.println( "Exemplarinitialisierer" );
+
+		  }
+
+
+
+		  JavaInitializers() {
+
+		   System.out.println( "Konstruktor" );
+
+		  }
+
+
+
+		  public static void main( String[] args ) {
+
+		    
+			  ausgabe();
+			  new JavaInitializers();
+
+		    new JavaInitializers();
+
+		  }
+
+		}
+

@@ -1,0 +1,39 @@
+package Aufgabeteil2C;
+
+public class Aufgabe02 {
+
+	    private int mahnstufe;
+	    private int mahngebuehr;
+
+	    // Erster Konstruktor
+	    public Aufagbe02(int mahnstufe, int mahngebuehr) {
+	        this.mahnstufe = mahnstufe;
+	        this.mahngebuehr = mahngebuehr;
+	        generiereKonsolenausgabe();
+	    }
+
+	    // Zweiter Konstruktor
+	    public Mahnung(Mahnung vorherigeMahnung) {
+	        this.mahnstufe = vorherigeMahnung.mahnstufe + 1;
+	        this.mahngebuehr = vorherigeMahnung.mahngebuehr + 5;
+	        generiereKonsolenausgabe();
+	    }
+
+	    // Methode zur Erzeugung der Konsolenausgabe
+	    public void generiereKonsolenausgabe() {
+	        System.out.println("Mahnstufe: " + mahnstufe);
+	        System.out.println("Mahngebühr: " + mahngebuehr);
+	        System.out.println("------------------------");
+	    }
+
+	    public static void main(String[] args) {
+	        // Erstes Objekt mit dem ersten Konstruktor erstellen
+	        Mahnung ersteMahnung = new Mahnung(1, 5);
+
+	        // Zweites Objekt mit dem zweiten Konstruktor erstellen
+	        Mahnung zweiteMahnung = new Mahnung(ersteMahnung);
+
+	        // Drittes Objekt mit dem zweiten Konstruktor erstellen
+	        Mahnung dritteMahnung = new Mahnung(zweiteMahnung);
+	    }
+	}

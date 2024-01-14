@@ -1,0 +1,73 @@
+package zusatzAufgabe;
+
+public class Uhrzeit {
+	private String uhrzeit;
+	private int stunde;
+	private int minute;
+	private int sekunde;
+	
+
+	
+
+
+	/**
+	 * @param stunde
+	 * @param minute
+	 * @param sekunde
+	 */
+	public Uhrzeit(int stunde, int minute, int sekunde) {
+		super();
+		this.stunde = stunde;
+		this.minute = minute;
+		this.sekunde = sekunde;
+	}
+public String addSeconds(int sec) {
+	this.sekunde+=sec;
+	if( sekunde>=60) {
+		int rest=sekunde/60;
+		this.sekunde=0;
+		this.minute=1+rest;
+		if(minute>=60) {
+			int restMin=minute/60;
+			this.minute=0;
+			this.stunde=1+restMin;
+			if(stunde>=24) {
+				int mod=stunde%24;
+				this.uhrzeit=stunde + ":" + minute + ":" + sekunde+"p.m";
+		}
+			}
+		
+	
+}
+	
+		return uhrzeit;
+	}
+public String uhrzeit() {
+	
+	
+	
+	return uhrzeit;
+	
+}
+
+
+	@Override
+public String toString() {
+		if (stunde<12) {
+			uhrzeit=stunde + ":" + minute + ":" + sekunde+"p.m";
+			
+		}else {
+			uhrzeit=stunde + ":" + minute + ":" + sekunde+"a.m";
+			
+		}
+	return uhrzeit;
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Uhrzeit u1=new Uhrzeit(23,34,56);
+		u1.addSeconds(34);
+
+	}
+
+}

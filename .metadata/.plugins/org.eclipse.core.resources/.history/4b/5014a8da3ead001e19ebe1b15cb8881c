@@ -1,0 +1,15 @@
+package javaInnerClasses;
+class StaticOuterClass {
+	  int x = 10;
+
+	  static class StaticInnerClass {
+	    int y = 5;
+	  }
+	}
+
+	public class StaticInnerClass1 {
+	  public static void main(String[] args) {
+		  StaticOuterClass.StaticInnerClass myInner = new StaticOuterClass.StaticInnerClass();
+	    System.out.println(myInner.y);
+	  }
+	}

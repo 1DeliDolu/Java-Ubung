@@ -1,0 +1,32 @@
+package JList;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//JList
+		//obj.setSize(x,y,width,height)
+		JFrame frame=new JFrame("Beispiel für Button");
+		DefaultListModel dl=new DefaultListModel();
+		dl.addElement("C++");
+		dl.addElement("C");
+		dl.addElement("Java");
+		dl.addElement("PHP");
+		dl.addElement("Java");
+		
+		
+		
+		
+		
+		
+		
+		frame.setSize(500,500);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
+
+}

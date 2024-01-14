@@ -1,0 +1,16 @@
+package AufgabeTeil2A;
+
+import java.util.Arrays;
+
+public class Starter {
+	static Aufgabe01[] student=new Aufgabe01[2];
+	
+	public static void main(String [] args) {
+		Aufgabe01 a1=new Aufgabe01();
+		a1.setName("Mustafa");
+		a1.setGeschlecht('m');
+		Aufgabe01 a2=new Aufgabe01();
+		student[0]=a1;
+		System.out.println(Arrays.toString(student));
+	}
+}

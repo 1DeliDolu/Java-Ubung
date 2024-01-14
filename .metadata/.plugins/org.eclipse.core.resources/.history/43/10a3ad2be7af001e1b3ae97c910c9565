@@ -1,0 +1,34 @@
+package zusatzAufgabe;
+
+public class Starter {
+
+	public static void main(String[] args) {
+	       
+        Uhrzeit uhrzeit = new Uhrzeit(23, 59, 59);
+        System.out.println("Uhrzeit: " + uhrzeit.toString());
+
+        uhrzeit.addSeconds(120);
+        System.out.println("Uhrzeit nach Hinzufügen von 120 Sekunden: " + uhrzeit.toString());
+
+        System.out.print("Uhrzeit im amerikanischen Format: ");
+        uhrzeit.printTime();
+        
+        /*-----------------------------------------------------------------------*/
+        System.out.println("\n");
+        Uhrzeit2 uhrzeit1 = new Uhrzeit2(23, 59, 30);
+        Uhrzeit2 uhrzeit2 = new Uhrzeit2(1, 30, 45);
+
+        System.out.println("Uhrzeit 1: " + uhrzeit1.toString());
+        System.out.println("Uhrzeit 2: " + uhrzeit2.toString());
+
+        Uhrzeit2 summe = Uhrzeit2.add(uhrzeit1, uhrzeit2);
+        System.out.println("Summe der Uhrzeiten: " + summe.toString());
+        
+        /*-----------------------------------------------------------------------*/
+        
+        
+        Wechselgeld geld1 = new Wechselgeld (34);
+        //System.out.println("Für " + betrag + " Euro benötigen Sie:");
+        //.wechselgeldAusgeben(betrag);
+    }
+}

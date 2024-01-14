@@ -1,0 +1,23 @@
+ package JButton;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		//Button
+		
+		JFrame frame=new JFrame("Beispiel für Button");
+		frame.setSize(400,400);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+		
+		JButton btn=new JButton("Send");
+		frame.add(btn);
+		
+		
+	}
+
+}

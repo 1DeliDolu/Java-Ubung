@@ -1,0 +1,33 @@
+package AufgabeTeil3;
+
+	public class Handy {
+		  // Felder als private deklarieren
+		  private int nummer;
+		  private String besitzer;
+		  private Konto konto;
+		  private String letzteSMS;
+
+		  // Konstruktor mit Nummer und Konto
+		  public Handy(int neueNummer, Konto bankKonto) {
+		    nummer = neueNummer;
+		    konto = bankKonto;
+		    besitzer = konto.getInhaber(); // Der Besitzer ist der Inhaber des Kontos
+		    letzteSMS = ""; // Anfangs keine SMS
+		  }
+
+		  // Methode, um eine SMS zu senden
+		  public void sendeSMS(Handy empfänger, String text) {
+		    empfänger.letzteSMS = text; // Die letzte SMS des Empfängers überschreiben
+		    konto.abheben(1); // 1 Euro vom Konto abheben
+		  }
+
+		  // Methode, um die letzte SMS zu lesen
+		  public String leseSMS() {
+		    return letzteSMS;
+		  }
+
+		  // Methode, um die letzte SMS auszudrucken
+		  public void druckeSMS() {
+		    System.out.println("Letzte SMS: " + letzteSMS);
+		  }
+		}

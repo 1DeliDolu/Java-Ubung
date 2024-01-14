@@ -1,0 +1,56 @@
+package AufgabeTeil2D;
+
+
+public class Student {
+	  // Instanzvariablen für jeden Studenten
+	  private String name; // der Name des Studenten
+	  private int matrikelNr; // die Matrikelnummer des Studenten
+	  private int scheinAnzahl; // die Anzahl der bisher erlangten Scheine
+	  private static int mindScheine; // die Anzahl der Scheine, die für die Prüfungszulassung notwendig sind (für alle Studenten gleich)
+	  static int nextMatrikelNr;
+	  // Konstruktor, der einen neuen Studenten mit dem Namen, einer fortlaufenden Matrikelnummer und keinem bisher erlangten Schein erstellt
+	  public Student(String name) {
+	    this.name = name; // den Namen zuweisen
+	    this.matrikelNr = generateMatrikelNr(); // eine Matrikelnummer generieren
+	    this.scheinAnzahl = 0; // die Anzahl der Scheine auf 0 setzen
+	  }
+
+	  // Eine statische Methode, die eine eindeutige Matrikelnummer generiert
+	  private static int generateMatrikelNr() {
+	    // Eine statische Variable, die die nächste verfügbare Matrikelnummer speichert
+	    // Diese wird bei jedem Aufruf der Methode um 1 erhöht
+	    // Sie können einen beliebigen Startwert wählen
+	    // Hier wählen wir 1000000 als Beispiel
+	    nextMatrikelNr = 1000000;
+	    // Die aktuelle Matrikelnummer zurückgeben
+	    return nextMatrikelNr++;
+	  }
+
+	  // Eine Methode, die die Matrikelnummer des Studenten liefert
+	  public int getMatrikelNr() {
+	    return this.matrikelNr;
+	  }
+
+	  // Eine Methode, die die Anzahl der bisher erlangten Scheine liefert
+	  public int getScheinAnzahl() {
+	    return this.scheinAnzahl;
+	  }
+
+	  // Eine Methode, die dem Studenten Anzahl viele, neue Scheine hinzufügt
+	  public void addScheine(int anzahl) {
+	    // Die Anzahl der Scheine um die gegebene Anzahl erhöhen
+	    this.scheinAnzahl += anzahl;
+	  }
+
+	  // Eine statische Methode, die die Anzahl der Scheine setzt, die für die Zulassung zur Prüfung notwendig sind
+	  public static void setMindScheine(int anzahl) {
+	    // Die statische Variable mindScheine auf die gegebene Anzahl setzen
+	    mindScheine = anzahl;
+	  }
+
+	  // Eine Methode, die true liefert, falls der Student genügend Scheine für die Prüfungszulassung hat
+	  public boolean testeZulassung() {
+	    // Prüfen, ob die Anzahl der Scheine größer oder gleich der Anzahl der Mindestscheine ist
+	    return this.scheinAnzahl >= mindScheine;
+	  }
+	}

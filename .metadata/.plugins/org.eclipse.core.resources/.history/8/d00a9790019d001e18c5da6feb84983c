@@ -1,0 +1,41 @@
+package JavaArraysLoop;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ForVomKonsol {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		// TODO Auto-generated method stub
+		// Erstellen Sie ein Array mit 10 int-Werten
+		 System.out.print("Array length : ");
+		int arrayLegth=scanner.nextInt();
+		String[] name=new String[arrayLegth];
+		int[] zahlen = new int[arrayLegth];
+
+        // Scanner erstellen
+        
+
+        // Schleife über das Array und lesen Sie die Daten von der Konsole ein
+        for (int i = 0; i < zahlen.length; i++) {
+        	
+            System.out.print("Zahl "+i+" :");
+        	zahlen[i] = scanner.nextInt();
+        }
+     // // Schleife über das Array und lesen Sie die Daten von der Konsole ein
+        
+        for (int k = 0; k < arrayLegth; k++) {
+        	System.out.print("name "+k+" :");
+        	name[k]=scanner.nextLine();
+        	
+	} 
+        // Die eingelesenen Daten ausgeben
+        System.out.println("-----------------");
+        
+        for (int l = 0; l < arrayLegth; l++) {
+        System.out.println(name[l]+"  "+ zahlen[l]);
+	}
+
+}
+}

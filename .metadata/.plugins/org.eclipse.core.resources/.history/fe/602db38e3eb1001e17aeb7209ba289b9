@@ -1,0 +1,26 @@
+package textArea;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//JTextArea
+		//obj.setBounds(x,y,width,height)
+		
+		JFrame frame=new JFrame("Beispiel für JTextArea");
+		JTextArea t=new JTextArea();
+		t.setBounds(0, 0, 250, 250);
+		
+		
+		frame.add(t);
+		
+		frame.setSize(400,400);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
+
+}

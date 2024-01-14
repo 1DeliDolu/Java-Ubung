@@ -1,0 +1,15 @@
+package jScrollBar110;
+
+import javax.swing.JFrame;
+
+public class Main {public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	//JOptionePane
+	//obj.setBounds(x,y,width,height)
+	JFrame frame = new JFrame("Beispiel für JScrollBar");
+
+
+}
+
+
+}

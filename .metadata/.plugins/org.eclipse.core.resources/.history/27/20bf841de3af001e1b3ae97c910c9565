@@ -1,0 +1,67 @@
+package zusatzAufgabe;
+
+public class Uhrzeit2 {
+	
+	    private int stunden;
+	    private int minuten;
+	    private int sekunden;
+
+	    // Konstruktor
+	    public Uhrzeit2(int stunden, int minuten, int sekunden) {
+	        setUhrzeit(stunden, minuten, sekunden);
+	    }
+
+	    // Private Methode zur Aktualisierung der Uhrzeitwerte
+	    private void setUhrzeit(int stunden, int minuten, int sekunden) {
+	        this.stunden = stunden % 24;
+	        this.minuten = minuten % 60;
+	        this.sekunden = sekunden % 60;
+	    }
+
+	    // Methode zum Hinzufügen von Sekunden
+	    public void addSeconds(int sec) {
+	        int gesamtSekunden = stunden * 3600 + minuten * 60 + sekunden + sec;
+	        setUhrzeit(gesamtSekunden / 3600, (gesamtSekunden % 3600) / 60, gesamtSekunden % 60);
+	    }
+
+	    // Methode zur Darstellung der Uhrzeit im Format "h:m:s"
+	    public String toString() {
+	        return String.format("%02d:%02d:%02d", stunden, minuten, sekunden);
+	    }
+
+	    // Methode zur Ausgabe der Uhrzeit im amerikanischen Format
+	    public void printTime() {
+	        String am_pm = (stunden < 12) ? "a.m." : "p.m.";
+	        if (stunden == 0) {
+	            stunden = 12;
+	        } else if (stunden > 12) {
+	            stunden -= 12;
+	        }
+	        System.out.printf("%d:%02d %s\n", stunden, minuten, am_pm);
+	    }
+
+	    // Statische Methode zum Hinzufügen von zwei Uhrzeiten
+	    public static Uhrzeit add(Uhrzeit t1, Uhrzeit t2) {
+	        int gesamtSekunden = (t1.stunden + t2.stunden) * 3600 +
+	                             (t1.minuten + t2.minuten) * 60 +
+	                             t1.sekunden + t2.sekunden;
+
+	        int neueStunden = gesamtSekunden / 3600;
+	        int neueMinuten = (gesamtSekunden % 3600) / 60;
+	        int neueSekunden = gesamtSekunden % 60;
+
+	        return new Uhrzeit(neueStunden, neueMinuten, neueSekunden);
+	    }
+
+	    public static void main(String[] args) {
+	        // Beispielanwendung
+	        Uhrzeit uhrzeit1 = new Uhrzeit(23, 59, 30);
+	        Uhrzeit uhrzeit2 = new Uhrzeit(1, 30, 45);
+
+	        System.out.println("Uhrzeit 1: " + uhrzeit1.toString());
+	        System.out.println("Uhrzeit 2: " + uhrzeit2.toString());
+
+	        Uhrzeit summe = Uhrzeit.add(uhrzeit1, uhrzeit2);
+	        System.out.println("Summe der Uhrzeiten: " + summe.toString());
+	    }
+	}

@@ -1,0 +1,32 @@
+package jCheckBox;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//JCheckBox
+		////obj.setBounds(x,y,width,height)
+		
+		JFrame frame=new JFrame("Beispiel für JCheckBox");
+		
+		
+		JCheckBox ch1=new JCheckBox("JA");
+		JCheckBox ch2=new JCheckBox("NEIN");
+		ch1.setBounds(150,100,250,50);
+		ch2.setBounds(150,150,250,50);
+		
+		
+		
+		
+		
+		frame.add(ch1);
+		frame.add(ch2);
+		frame.setSize(400,400);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
+
+}

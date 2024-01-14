@@ -1,0 +1,44 @@
+package steuernUSA;
+
+import java.util.Scanner;
+
+public class SteuernUSA {
+
+	public static void main(String[] args) {
+		
+		Scanner steuer = new Scanner(System.in);
+		double bruttoGehalt = steuer.nextDouble();
+        boolean istVerheiratet = true;
+
+        double zuVersteuerndesEinkommen;
+
+        if (istVerheiratet) {
+            zuVersteuerndesEinkommen = bruttoGehalt - 18550;
+        } else {
+            zuVersteuerndesEinkommen = bruttoGehalt - 9275;
+        }
+ double nettoGehalt;
+
+        if (zuVersteuerndesEinkommen <= 9275) {
+            nettoGehalt = bruttoGehalt * (1 - 0.10);
+        } else if (zuVersteuerndesEinkommen <= 37650) {
+            nettoGehalt = bruttoGehalt * (1 - 0.15);
+        } else if (zuVersteuerndesEinkommen <= 91150) {
+            nettoGehalt = bruttoGehalt * (1 - 0.25);
+        } else if (zuVersteuerndesEinkommen <= 190150) {
+            nettoGehalt = bruttoGehalt * (1 - 0.28);
+        } else if (zuVersteuerndesEinkommen <= 413350) {
+            nettoGehalt = bruttoGehalt * (1 - 0.33);
+        } else if (zuVersteuerndesEinkommen <= 415050) {
+            nettoGehalt = bruttoGehalt * (1 - 0.35);
+        } else if (zuVersteuerndesEinkommen <= 466950) {
+            nettoGehalt = bruttoGehalt * (1 - 0.39);
+        } else {
+            nettoGehalt = bruttoGehalt * (1 - 0.39);
+        }
+
+        
+        System.out.println("Netto-Gehalt: $" + nettoGehalt);
+	}
+
+}

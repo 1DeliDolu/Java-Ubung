@@ -1,0 +1,39 @@
+package Aufgabeteil2C;
+
+
+
+public class Aufagbe01_1 {
+
+
+	    private String art;
+
+	    // Konstruktor für die Initialisierung von Tier-Objekten
+	    public Aufagbe01_1(String art) {
+	        this.art = art;
+	    }
+	    
+	    public Aufagbe01_1() {
+	    	this.art = art;
+	    }
+
+	    // Getter-Methode
+	    public String getArt() {
+	        return art;
+	    }
+	}
+
+	// Klasse Hund erbt von der Klasse Tier
+	class Hund extends Aufagbe01_1 {
+	    private String rasse;
+
+	    // Konstruktor für die Initialisierung von Hund-Objekten
+	    public Hund(String art, String rasse) {
+	        super(art); // Aufruf des Konstruktors der Superklasse (Tier)
+	        this.rasse = rasse;
+	    }
+
+	    // Getter-Methode für die Rasse
+	    public String getRasse() {
+	        return rasse;
+	    }
+	}

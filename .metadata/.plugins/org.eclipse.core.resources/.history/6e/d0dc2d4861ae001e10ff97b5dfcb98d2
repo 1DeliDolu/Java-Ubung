@@ -1,0 +1,24 @@
+package Aufgabeteil2C;
+
+//Mit einem Konstruktor kann man ein Objekt mit Werten initialisieren:
+public class Aufgabe01 {
+    private String modell;
+    private int baujahr;
+
+    // Konstruktor für die Initialisierung von Auto-Objekten
+    public Aufgabe01(String modell, int baujahr) {
+        this.modell = modell;
+        this.baujahr = baujahr;
+    }
+
+    // Getter-Methoden
+    public String getModell() {
+        return modell;
+    }
+
+    public int getBaujahr() {
+        return baujahr;
+    }
+}
+
+// Verwendung des Konstruktors

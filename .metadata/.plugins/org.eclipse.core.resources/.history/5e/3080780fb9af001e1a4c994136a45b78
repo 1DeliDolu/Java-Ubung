@@ -1,0 +1,11 @@
+package zusatzAufgabe;
+
+public class Starter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Uhrzeit u1=new  Uhrzeit(23,12,34);
+u1.addSeconds(59);
+	}
+
+}

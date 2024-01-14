@@ -1,0 +1,41 @@
+package zusatzAufgabe;
+
+import java.util.Scanner;
+
+public class Starter {
+static Scanner scanner = new Scanner(System.in);
+	public static void main(String[] args) {
+	       
+        Uhrzeit uhr1  = new Uhrzeit(23, 59, 59);
+        Uhrzeit uhr2  = new Uhrzeit(12, 59, 59);
+        System.out.println("Uhrzeit: " + uhr1.toString());
+        System.out.print("Gebe bitte Sekunde ein:");
+        int sekunde=scanner.nextInt();
+        scanner.nextLine();
+        uhr1.addSeconds(sekunde);
+        System.out.println("Uhrzeit nach Hinzufügen von "+ sekunde + " Sekunden " + uhr1.toString());
+        System.out.print("Uhrzeit im amerikanischen Format: ");
+        uhr1.printTime();
+        
+        
+        /*-----------------------------------------------------------------------*/
+        System.out.println("\n");
+        Uhrzeit2 uhrzeit1 = new Uhrzeit2(23, 59, 30);
+        Uhrzeit2 uhrzeit2 = new Uhrzeit2(1, 30, 45);
+
+        System.out.println("Uhrzeit 1: " + uhrzeit1.toString());
+        System.out.println("Uhrzeit 2: " + uhrzeit2.toString());
+
+        Uhrzeit2 summe = Uhrzeit2.add(uhrzeit1, uhrzeit2);
+        System.out.println("Summe der Uhrzeiten: " + summe.toString());
+        
+        /*-----------------------------------------------------------------------*/
+        
+        System.out.print("Gebe bitte Beitrag ein:");
+        int wechselGeld=scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("\n");
+        Wechselgeld geld1 = new Wechselgeld();
+        geld1.wechselgeldAusgeben(wechselGeld);
+    }
+}

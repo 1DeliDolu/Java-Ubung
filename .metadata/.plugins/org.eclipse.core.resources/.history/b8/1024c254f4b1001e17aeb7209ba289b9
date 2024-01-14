@@ -1,0 +1,25 @@
+package jTable;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Table
+		//btn.stBounds(x,y,width,height)
+		
+		 JFrame frame = new JFrame("Beispiel für JTable");
+		 
+		 
+		 
+		 
+		 
+		 
+		 frame.setSize(500, 500);
+         frame.setLayout(null);
+         frame.setVisible(true);
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

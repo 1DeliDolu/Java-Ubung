@@ -1,0 +1,106 @@
+package zusatzAufgabe;
+
+public class Uhrzeit {
+
+private int stunden;
+private int minuten;
+private int sekunden;
+
+
+public Uhrzeit(int stunden, int minuten, int sekunden) {
+
+ if (stunden < 0 || stunden > 23) {
+   stunden = 0;  
+ }
+ if (minuten < 0 || minuten > 59) {
+   minuten = 0;
+ }
+ if (sekunden < 0 || sekunden > 59) {
+   sekunden = 0; 
+ }
+
+ this.stunden = stunden;
+ this.minuten = minuten;
+ this.sekunden = sekunden;
+}
+
+
+public void addSeconds(int sec) {
+
+ this.sekunden += sec;
+ 
+ while (this.sekunden > 59) {
+   this.sekunden -= 60; 
+   this.minuten++; 
+ }
+ while (this.sekunden < 0) {
+   this.sekunden += 60; 
+   this.minuten--; 
+ }
+ while (this.minuten > 59) {
+   this.minuten -= 60;  
+   this.stunden++;  
+ }
+ while (this.minuten < 0) {
+   this.minuten += 60;  
+   this.stunden--;  
+ }
+ 
+ this.stunden = this.stunden % 24;
+ 
+ if (this.stunden < 0) {
+   this.stunden += 24;
+ }
+}
+
+
+public String toString() {
+
+ String uhrzeit = "";
+ if (this.stunden < 10) {
+   uhrzeit += "0";  
+ uhrzeit += this.stunden + ":"; 
+ if (this.minuten < 10) {
+   uhrzeit += "0"; 
+ }
+ uhrzeit += this.minuten + ":";  
+ if (this.sekunden < 10) {
+   uhrzeit += "0";  
+ }
+ uhrzeit += this.sekunden;  
+ }
+ return uhrzeit;
+}
+
+ 
+public void printTime() {
+  
+ int stundeAM = this.stunden;
+  
+ String zeitraum = "";
+ 
+ if (stundeAM == 0) {
+   stundeAM = 12;
+   zeitraum = "a.m.";
+ }
+ 
+ else if (stundeAM >= 1 && stundeAM <= 11) {
+   zeitraum = "a.m.";
+ }
+ 
+ else if (stundeAM == 12) {
+   zeitraum = "p.m.";
+ }
+  
+ else if (stundeAM >= 13 && stundeAM <= 23) {
+   stundeAM -= 12;
+   zeitraum = "p.m.";
+ }
+  
+ System.out.print(stundeAM + ":");
+ if (this.minuten < 10) {
+   System.out.print("0");
+ }
+ System.out.println(this.minuten + " " + zeitraum);
+}
+}

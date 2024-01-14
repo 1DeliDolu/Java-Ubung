@@ -1,0 +1,52 @@
+package AufgabeTeil2D;
+
+public class Student {
+
+    private static int nextMatrikelNr = 1;
+
+    private String name;
+    private int matrikelNr;
+    private int scheinAnzahl;
+    private int mindScheine;
+
+    public Student(String name) {
+        this.name = name;
+        this.matrikelNr = nextMatrikelNr++;
+        this.scheinAnzahl = 0;
+        this.mindScheine = 1;
+    }
+
+    public int getMatrikelNr() {
+        return matrikelNr;
+    }
+
+    public int getScheinAnzahl() {
+        return scheinAnzahl;
+    }
+
+    public void addScheine(int anzahl) {
+        scheinAnzahl += anzahl;
+    }
+
+    public void setMindScheine(int anzahl) {
+        mindScheine = anzahl;
+    }
+
+    public boolean testeZulassung() {
+        return scheinAnzahl >= mindScheine;
+    }
+    public static void main(String[] args) {
+    	Student s1 = new Student("Max Mustermann");
+    	Student s2 = new Student("Anna Müller");
+
+    	s1.addScheine(2);
+    	s2.addScheine(3);
+
+    	System.out.println("s1 ist zugelassen: " + s1.testeZulassung()); // true
+    	System.out.println("s2 ist zugelassen: " + s2.testeZulassung()); // true
+
+    	s1.addScheine(1);
+
+    	System.out.println("s1 ist zugelassen: " + s1.testeZulassung()); // false
+    }
+}
