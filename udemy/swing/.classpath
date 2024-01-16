@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="182. JButton ve JTextField Kullanarak Web Sayfası Açma/WebSayfası/src"/>
+	<classpathentry kind="src" path="183. JButton, JTextField ve JLabel ile Basit Hesap Makinesi/BasitHesapMakinesi/src"/>
+	<classpathentry kind="src" path="184. JPasswordField Kullanarak Kullanıcı Girişi Yapma/BasitHesapMakinesi/src"/>
+	<classpathentry kind="src" path="185. JTextArea Kullanarak Kelime ve Harf Sayımı Programı/KelimeveHarfFrekansı/src"/>
+	<classpathentry kind="src" path="186. Checkbox Kullanımı ve Sipariş Uygulaması/SiparisUygulamasi/src"/>
+	<classpathentry kind="src" path="187. JCombobox ve RadioButton Kullanımı/RadioButtonveCombobox/src"/>
+	<classpathentry kind="src" path="188. Stok Uygulaması - JTable ile Ürün Ekleme/StokUygulaması/src"/>
+	<classpathentry kind="src" path="189. Stok Uygulaması - JTable ile Ürün Güncelleme/StokUygulaması/src"/>
+	<classpathentry kind="src" path="190. Stok Uygulaması - JTable ile Ürün Silme/StokUygulaması/src"/>
+	<classpathentry kind="src" path="191. ProgressBar Kullanarak Dosya İndirme Simulasyonu/DosyaIndirmeSimulasyonu/src"/>
+	<classpathentry kind="src" path="192. JList Kullanımı ve Input Dialogları/JListKullanımı/src"/>
+	<classpathentry kind="src" path="193. Register Login Uygulaması - Arayüz Tasarımı/RegisterLogin/src"/>
+	<classpathentry kind="src" path="194. Register Login Uygulaması - Arayüze Özellik ve Action Ekleme/RegisterLogin/src"/>
+	<classpathentry kind="src" path="195. JFileChooser ve JColorChooser Kullanımı/FileChooserveColorChooser/src"/>
+	<classpathentry kind="src" path="196. Menülerle Notepad Uygulaması Geliştirme - Arayüz Tasarımı/Menuler/src"/>
+	<classpathentry kind="src" path="197. Menülerle Notepad Uygulaması Geliştirme - Arayüze Action Ekleme/Menuler/src"/>
+	<classpathentry kind="src" path="198. Graphic Kütüphansei Killanarak Arayüz Sekil verme/GrafikKullanimi/src"/>
+	<classpathentry kind="output" path="182. JButton ve JTextField Kullanarak Web Sayfası Açma/WebSayfası/build/classes"/>
+</classpath>
